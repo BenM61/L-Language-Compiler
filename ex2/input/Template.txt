@@ -1,0 +1,48 @@
+public class Template {
+
+  /****************** Inside CONSTRUCTOR code *******************/
+
+    /******************************/
+    /* SET A UNIQUE SERIAL NUMBER */
+    /******************************/
+    SerialNumber=AST_Node_Serial_Number.getFresh();
+
+    }
+
+    /****************** outside CONSTRUCTOR code *******************/
+
+    /*************************************************/
+    /* The printing message for a XXX node */
+    /*************************************************/
+    public void PrintMe() {
+
+    /*************************************/
+    /* AST NODE TYPE- change XXX with this class name */
+    /*************************************/
+    System.out.print(String.format("AST %s NODE\n", "XXX"));
+
+    /**************************************/
+    /* RECURSIVELY PRINT non-null(!) sons (list, left and right...) */
+    /**************************************/
+    if (left != null) 
+      left.PrintMe();
+    /***************************************/
+    /* PRINT Node to AST GRAPHVIZ DOT file */
+    /* print node name and optional string (maybe only needed in binop nodes) */
+    /***************************************/
+    String s = "";
+    AST_GRAPHVIZ.getInstance().logNode(SerialNumber, String.format("BINOP(%s)", s));
+
+    /****************************************/
+    /* PRINT Edges to AST GRAPHVIZ DOT file */
+    /*
+     * Print Edges to every son! 
+     */
+    /****************************************/
+    if (left != null) 
+      AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, left.SerialNumber);
+    
+  }
+}
+    if (id != null)
+        AST_GRAPHVIZ.getInstance().logNode(SerialNumber, String.format("%s", id));

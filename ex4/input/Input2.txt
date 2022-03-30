@@ -1,0 +1,33 @@
+class A {
+    int y;
+}
+
+class B {
+    int e;
+    int y;
+}
+
+void f(int x, string yy){
+    if (1){
+        int y := 8;
+        int z := 12;
+    }
+    int y:=0;
+}
+
+
+int y:=0;
+
+class Person
+{
+	int ID;
+	int age := 10;
+    int getAge()  
+    { 
+        int a;
+        int b := 1;
+                   }
+}
+
+Person p := new Person;
+
