@@ -4,57 +4,10 @@ A compiler for the OOP made up language L.
 Takes a program in L (examples below), and outputs the MIPS code that was generated. The MIPS code can then get executed via SPIM. 
 The code uses JFlex and CUP to make the lexer and parser respectively.
 
-Was written as a project in TAU's "Compilation" course, with @mor282 and @OfekBar.
+Was written as a final project in TAU's "Compilation" course, with @mor282 and @OfekBar.
 
 Example programs in L:
-```
-array IntArray = int[];
 
-class Person
-{
-	int ID;
-	int age := 18;
-
-	IntArray lastYearSalaries;
-
-	int getAge()  { return age;   }
-	int birthday(){ age := age+1; }
-}
-
-class Student extends Person
-{
-	IntArray grades;
-	int getAverage()
-	{
-		int i := 0;
-		int sum := 0;
-		while (i<10)
-		{
-			sum := sum+grades[i];
-			i := i+1;
-		}
-		return sum/10;
-	}
-}
-
-array University = Student[];
-
-void main()
-{
-	Student moish := new Student;
-	moish.grades := new int[10];
-	moish.lastYearSalaries := new int[12];
-	int COMPILATION := 6;
-
-	moish.grades[COMPILATION] := 9;
-
-	University TAU := new Student[37];
-	
-	TAU[3] := moish;
-	TAU[5].lastYearSalaries[TAU[3].grades[COMPILATION]] := 999;
-}
-
-```
 Bubble sort
 ```
 array IntArray = int[];
@@ -108,5 +61,56 @@ void main()
     }
 }
 
+
+```
+
+
+Some other example
+```
+array IntArray = int[];
+
+class Person
+{
+	int ID;
+	int age := 18;
+
+	IntArray lastYearSalaries;
+
+	int getAge()  { return age;   }
+	int birthday(){ age := age+1; }
+}
+
+class Student extends Person
+{
+	IntArray grades;
+	int getAverage()
+	{
+		int i := 0;
+		int sum := 0;
+		while (i<10)
+		{
+			sum := sum+grades[i];
+			i := i+1;
+		}
+		return sum/10;
+	}
+}
+
+array University = Student[];
+
+void main()
+{
+	Student moish := new Student;
+	moish.grades := new int[10];
+	moish.lastYearSalaries := new int[12];
+	int COMPILATION := 6;
+
+	moish.grades[COMPILATION] := 9;
+
+	University TAU := new Student[37];
+	
+	TAU[3] := moish;
+	TAU[5].lastYearSalaries[TAU[3].grades[COMPILATION]] := 999;
+}
 
 ```
