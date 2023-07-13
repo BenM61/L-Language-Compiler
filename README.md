@@ -65,7 +65,7 @@ void main()
 ```
 
 
-Some other example
+Another example
 ```
 array IntArray = int[];
 
